@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>House Rock</title>
+  <meta name="description" content="Plataforma confiable, atención personalizada y soporte permanente." />
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #14051f;
+    }
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,0.08), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(255,180,0,0.1), transparent 30%),
+        #14051f;
+    }
+    .hero {
+      position: relative;
+      width: min(100vw, 560px);
+      min-height: 100vh;
+      overflow: hidden;
+      background: #14051f;
+      box-shadow: 0 0 60px rgba(0,0,0,.35);
+    }
+    .hero img.bg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .cta-wrap {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: clamp(22px, 3.5vw, 34px);
+      width: min(86%, 430px);
+      z-index: 3;
+    }
+    .cover-base {
+      position: absolute;
+      inset: -10px -8px -10px -8px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(120, 0, 180, 0.45), rgba(30, 0, 55, 0.92) 70%),
+        linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.03));
+      filter: blur(6px);
+      z-index: -2;
+      box-shadow:
+        0 0 30px rgba(170, 60, 255, 0.45),
+        0 0 70px rgba(255, 180, 0, 0.18);
+    }
+    .cta {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      width: 100%;
+      min-height: 72px;
+      padding: 18px 22px;
+      text-decoration: none;
+      border-radius: 999px;
+      color: #fff6c9;
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: .4px;
+      font-size: clamp(22px, 5vw, 34px);
+      text-transform: uppercase;
+      text-shadow: 0 2px 0 rgba(75, 25, 0, 0.45);
+      border: 2px solid rgba(255, 214, 95, 0.95);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0) 28%),
+        linear-gradient(180deg, #29df77 0%, #0abf59 52%, #03994a 100%);
+      box-shadow:
+        0 10px 22px rgba(0,0,0,.45),
+        0 0 0 2px rgba(255,255,255,.12) inset,
+        0 0 26px rgba(30, 255, 130, .35),
+        0 6px 0 rgba(12, 90, 39, .9);
+      overflow: hidden;
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+    .cta::before {
+      content: "";
+      position: absolute;
+      top: -35%;
+      left: -35%;
+      width: 36%;
+      height: 180%;
+      transform: rotate(18deg);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent);
+      animation: shine 2.4s linear infinite;
+      pointer-events: none;
+    }
+    .cta::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      box-shadow: 0 0 30px rgba(255, 235, 120, .28) inset;
+      pointer-events: none;
+    }
+    .wpp-icon {
+      width: clamp(28px, 5vw, 38px);
+      height: clamp(28px, 5vw, 38px);
+      flex: 0 0 auto;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,.35));
+    }
+    .helper {
+      margin-top: 10px;
+      text-align: center;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-shadow: 0 2px 8px rgba(0,0,0,.65);
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.035); }
+    }
+    @keyframes shine {
+      0% { left: -40%; }
+      100% { left: 120%; }
+    }
+    .float {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 66px;
+      height: 66px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #31ea7d, #0faa56);
+      display: grid;
+      place-items: center;
+      box-shadow:
+        0 10px 20px rgba(0,0,0,.35),
+        0 0 24px rgba(30,255,130,.35);
+      border: 2px solid rgba(255,255,255,.8);
+      z-index: 4;
+      animation: floaty 1.8s ease-in-out infinite;
+    }
+    .float svg {
+      width: 34px;
+      height: 34px;
+    }
+    @keyframes floaty {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <img class="bg" src="./principal.jpg" alt="House Rock promoción" />
+      <div class="cta-wrap">
+        <div class="cover-base"></div>
+        <a
+          id="wppBtn"
+          class="cta"
+          href="https://www.linkify.com.ar/api/soporte?id=a1dn79"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Hablar por WhatsApp"
+        >
+          <svg class="wpp-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path fill="white" d="M19.11 17.44c-.26-.13-1.52-.75-1.75-.83-.23-.09-.4-.13-.57.13-.17.26-.66.83-.81 1-.15.17-.3.2-.56.07-.26-.13-1.08-.4-2.06-1.27-.76-.68-1.27-1.52-1.42-1.78-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.9-.2-.48-.41-.42-.57-.43l-.49-.01c-.17 0-.44.06-.67.33-.23.26-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3z"/>
+            <path fill="white" d="M16 3C8.83 3 3 8.63 3 15.57c0 2.46.75 4.75 2.03 6.67L4 29l6.98-1.96A13.2 13.2 0 0 0 16 28c7.17 0 13-5.63 13-12.57C29 8.63 23.17 3 16 3zm0 22.65c-2.04 0-3.95-.56-5.58-1.52l-.4-.24-4.14 1.16 1.2-3.92-.27-.39a10.46 10.46 0 0 1-1.73-5.69C5.08 9.9 10.02 5.3 16 5.3s10.92 4.6 10.92 10.35S21.98 25.65 16 25.65z"/>
+          </svg>
+          <span>Hablar por WhatsApp</span>
+        </a>
+        <div class="helper">Respuesta rápida • Atención personalizada</div>
+      </div>
+    </section>
+  </main>
+
+  <a
+    id="wppFloat"
+    class="float"
+    href="https://www.linkify.com.ar/api/soporte?id=a1dn79"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp flotante"
+  >
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path fill="white" d="M19.11 17.44c-.26-.13-1.52-.75-1.75-.83-.23-.09-.4-.13-.57.13-.17.26-.66.83-.81 1-.15.17-.3.2-.56.07-.26-.13-1.08-.4-2.06-1.27-.76-.68-1.27-1.52-1.42-1.78-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.9-.2-.48-.41-.42-.57-.43l-.49-.01c-.17 0-.44.06-.67.33-.23.26-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.52-.62 1.73-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3z"/>
+      <path fill="white" d="M16 3C8.83 3 3 8.63 3 15.57c0 2.46.75 4.75 2.03 6.67L4 29l6.98-1.96A13.2 13.2 0 0 0 16 28c7.17 0 13-5.63 13-12.57C29 8.63 23.17 3 16 3zm0 22.65c-2.04 0-3.95-.56-5.58-1.52l-.4-.24-4.14 1.16 1.2-3.92-.27-.39a10.46 10.46 0 0 1-1.73-5.69C5.08 9.9 10.02 5.3 16 5.3s10.92 4.6 10.92 10.35S21.98 25.65 16 25.65z"/>
+    </svg>
+  </a>
+
+  <script>
+    const targetUrl = "https://www.linkify.com.ar/api/soporte?id=a1dn79";
+
+    function trackConversion(label) {
+      if (typeof window.fbq === "function") {
+        try {
+          window.fbq("track", "Lead");
+          window.fbq("trackCustom", "WhatsAppClick", { source: label });
+        } catch (e) {}
+      }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "whatsapp_click",
+        click_source: label
+      });
+      window.dispatchEvent(new CustomEvent("conversion_click", {
+        detail: { source: label }
+      }));
+    }
+
+    function handleClick(event, label) {
+      event.preventDefault();
+      trackConversion(label);
+      window.open(targetUrl, "_blank", "noopener,noreferrer");
+    }
+
+    document.getElementById("wppBtn").addEventListener("click", function(e) {
+      handleClick(e, "main_button");
+    });
+
+    document.getElementById("wppFloat").addEventListener("click", function(e) {
+      handleClick(e, "floating_button");
+    });
+  </script>
+</body>
+</html>
